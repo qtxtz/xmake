@@ -454,7 +454,11 @@ function _instance:_description(toolkind)
             nc         = "the nim compiler",
             ncld       = "the nim linker",
             ncsh       = "the nim shared library linker",
-            ncar       = "the nim static library archiver"
+            ncar       = "the nim static library archiver",
+            kc         = "the kotlin native compiler",
+            kcld       = "the kotlin native linker",
+            kcsh       = "the kotlin native shared library linker",
+            kcar       = "the kotlin native static library archiver",
         }
         self._DESCRIPTIONS = descriptions
     end
@@ -638,6 +642,15 @@ function toolchain.directories()
                                     }
     toolchain._DIRS = dirs
     return dirs
+end
+
+-- add toolchain directories
+function toolchain.add_directories(...)
+    local dirs = toolchain.directories()
+    for _, dir in ipairs({...}) do
+        table.insert(dirs, 1, dir)
+    end
+    toolchain._DIRS = table.unique(dirs)
 end
 
 -- load toolchain

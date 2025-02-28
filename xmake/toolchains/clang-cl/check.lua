@@ -30,7 +30,7 @@ function _find_clang_cl(vcvars)
     if pathenv then
         paths = path.splitenv(pathenv)
     end
-    return find_tool("clang-cl.exe", {version = true, force = true, paths = paths, envs = vcvars})
+    return find_tool("clang-cl", {version = true, force = true, paths = paths, envs = vcvars})
 end
 
 -- attempt to check vs environment
@@ -49,7 +49,7 @@ function _check_vsenv(toolchain)
     -- find vstudio
     local vs_toolset = toolchain:config("vs_toolset") or config.get("vs_toolset")
     local vs_sdkver  = toolchain:config("vs_sdkver") or config.get("vs_sdkver")
-    local vstudio = find_vstudio({vcvars_ver = vs_toolset, sdkver = vs_sdkver})
+    local vstudio = find_vstudio({toolset = vs_toolset, sdkver = vs_sdkver})
     if vstudio then
 
         -- make order vsver
