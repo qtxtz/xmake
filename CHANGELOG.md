@@ -4,6 +4,18 @@
 
 ### New features
 
+* [#6137](https://github.com/xmake-io/xmake/issues/6137): IDE integration
+* [#6138](https://github.com/xmake-io/xmake/issues/6138): Use libxmake to build binary with xmake lua apis
+* [#6154](https://github.com/xmake-io/xmake/issues/6154): Add kotlin language and kotlin-native compiler and packages support
+
+### Changes
+
+* [#6182](https://github.com/xmake-io/xmake/pull/6182): Support msstl modules for clang
+
+## v2.9.8
+
+### New features
+
 * [#5994](https://github.com/xmake-io/xmake/issues/5994): Profile process performance
 * [#5995](https://github.com/xmake-io/xmake/pull/5995): Add profile support for vs generator
 * [#5949](https://github.com/xmake-io/xmake/pull/5949): Add rule nodejs.module
@@ -11,11 +23,16 @@
 * [#5945](https://github.com/xmake-io/xmake/issues/5945): Check pkgconfig/cmake importfiles for package
 * [#6054](https://github.com/xmake-io/xmake/issues/6054): Add xmake bundle for linux
 * [#6071](https://github.com/xmake-io/xmake/issues/6071): Improve to download package for git url, support for sparse-checkout
+* [#5163](https://github.com/xmake-io/xmake/issues/5163): Support TI-CGT C2000/C6000 compiler
+* [#5344](https://github.com/xmake-io/xmake/issues/5344): Support IAR ARM C/C++ compiler
+* [#5554](https://github.com/xmake-io/xmake/issues/5554): Add custom unknown toolchains support
 
 ### Changes
 
 * [#6056](https://github.com/xmake-io/xmake/pull/6056): Build and release xmake/arm64 on windows.
 * [#6097](https://github.com/xmake-io/xmake/pull/6097): Add qt_host Option to Enable Cross-Platform Qt Builds Using Host SDK Tools
+* [#6120](https://github.com/xmake-io/xmake/issues/6120): Add custom preprocessor for configfiles
+* [#6088](https://github.com/xmake-io/xmake/issues/6088): Improve configfiles to generate export macro
 
 ### Bugs fixed
 
@@ -1942,6 +1959,18 @@
 
 ### 新特性
 
+* [#6137](https://github.com/xmake-io/xmake/issues/6137): IDE 整合
+* [#6138](https://github.com/xmake-io/xmake/issues/6138): 使用 libxmake/xmake APIs 去构建二进制
+* [#6154](https://github.com/xmake-io/xmake/issues/6154): 添加 kotlin native 构建支持和包依赖集成支持
+
+### 改进
+
+* [#6182](https://github.com/xmake-io/xmake/pull/6182): 改进 clang/clang-cl 支持 msstl 模块
+
+## v2.9.8
+
+### 新特性
+
 * [#5994](https://github.com/xmake-io/xmake/issues/5994): 分析进程执行性能
 * [#5995](https://github.com/xmake-io/xmake/pull/5995): 为 vs generator 添加 profile 支持
 * [#5949](https://github.com/xmake-io/xmake/pull/5949): 添加 nodejs.module 规则
@@ -1949,11 +1978,16 @@
 * [#5945](https://github.com/xmake-io/xmake/issues/5945): 检测 pkgconfig/cmake 导入文件
 * [#6054](https://github.com/xmake-io/xmake/issues/6054): 为 linux 添加 xmake bundle 包
 * [#6071](https://github.com/xmake-io/xmake/issues/6071): 改进 git 包下载，支持仅仅 clone 指定子目录
+* [#5163](https://github.com/xmake-io/xmake/issues/5163): 支持 TI-CGT C2000/C6000 编译器
+* [#5344](https://github.com/xmake-io/xmake/issues/5344): 支持 IAR ARM C/C++ 编译器
+* [#5554](https://github.com/xmake-io/xmake/issues/5554): 添加自定义未知工具链支持
 
 ### 改进
 
 * [#6056](https://github.com/xmake-io/xmake/pull/6056): 添加 CI 去构建发布 windows arm64 版本。
 * [#6097](https://github.com/xmake-io/xmake/pull/6097): 添加 qt_host 支持交叉编译 Qt 项目
+* [#6120](https://github.com/xmake-io/xmake/issues/6120): 改进 configfiles 添加自定义预处理支持
+* [#6088](https://github.com/xmake-io/xmake/issues/6088): 改进 configfiles 去生成导出宏
 
 ### Bugs 修复
 

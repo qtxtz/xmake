@@ -859,7 +859,7 @@ function _instance:cachedir()
             local name = self:displayname():lower():gsub("::", "_"):gsub("#", "_")
             local version_str = self:version_str()
             -- strip invalid characters on windows, e.g. `>= <=`
-            if os.is_host("windows") then
+            if version_str and os.is_host("windows") then
                 version_str = version_str:gsub("[>=<|%*]", "")
             end
             if self:is_local() then
@@ -1966,6 +1966,9 @@ function _instance:find_tool(name, opt)
                                   bindirs = self:get("bindirs"),
                                   version = true, -- we alway check version
                                   require_version = opt.require_version,
+                                  check = opt.check,
+                                  command = opt.command,
+                                  parse = opt.parse,
                                   norun = opt.norun,
                                   system = opt.system,
                                   force = opt.force})
@@ -2389,7 +2392,7 @@ function _instance:_generate_lto_configs(sourcekind)
         local cflag = sourcekind == "cxx" and "cxxflags" or "cflags"
         if cc == "cl" then
             configs[cflag] = "-GL"
-        elseif cc == "clang" or cc == "clangxx" then
+        elseif cc == "clang" or cc == "clangxx" or cc == "clang_cl" then
             configs[cflag] = "-flto=thin"
         elseif cc == "gcc" or cc == "gxx" then
             configs[cflag] = "-flto"
